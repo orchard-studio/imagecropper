@@ -488,7 +488,7 @@
 				$entries = EntryManager::fetch($entry_id);
 				
 				$entryData = $entries[0]->getData();
-				$image = '<img style="vertical-align: middle;" src="' . URL . '/image/5/'.$data['width'].'/'.$data['height'].'/'.$data['x1'].'/'.$data['y1'].'/0/40'. $entryData[$this->get('related_field_id')]['file'] .'" alt="'.$this->get('label').' of Entry '.$entry_id.'"/>';
+				$image = '<img style="vertical-align: middle;" src="' . URL . '/image/5/'.$data['width'].'/'.$data['height'].'/'.$data['x1'].'/'.$data['y1'].'/0/40/'. $entryData[$this->get('related_field_id')]['file'] .'" alt="'.$this->get('label').' of Entry '.$entry_id.'"/>';
 			} else {
 				return parent::prepareTableValue(NULL);
 			}
@@ -499,7 +499,7 @@
 			}
 
 			else{
-				$link = Widget::Anchor($image, URL . '/image/5/'.$data['width'].'/'.$data['height'].'/'.$data['x1'].'/'.$data['y1'].'/'.$data['width'].'/'.$data['height']. $entryData[$this->get('related_field_id')]['file']);
+				$link = Widget::Anchor($image, URL . '/image/5/'.$data['width'].'/'.$data['height'].'/'.$data['x1'].'/'.$data['y1'].'/'.$data['width'].'/'.$data['height'].'/'. $entryData[$this->get('related_field_id')]['file']);
 				return $link->generate();
 			}
 
