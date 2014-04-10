@@ -135,8 +135,10 @@
 					image_path = Symphony.Context.get('root') + '/image/1/' + resize_width + '/' + resize_height +'/'+ o.image_file;
 					$image = $('<img width="' + resize_width + '" height="' + resize_height + '" src="' + image_path + '"/>');
 				} else {
-					var load_path = $('.field-upload').find('.file').find('.frame').find('input').val();					
-					image_path = Symphony.Context.get('root') + load_path;//'/workspace/' + o.image_file;
+					var load_path = $('.imagecropper.frame').attr('data-related_field_id');
+					var id = '#field-' + load_path;
+					var value = $(id).find('label').find('.frame').find('input').val();						
+					image_path = Symphony.Context.get('root') + value;//'/workspace/' + o.image_file;
 					
 					$image = $('<img width="' + o.image_width + '" height="' + o.image_height + '" src="' + image_path + '"/>');
 				};
